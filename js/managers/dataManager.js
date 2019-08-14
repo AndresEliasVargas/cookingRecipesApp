@@ -21,9 +21,9 @@ class DataManager {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 let dataRecipes = JSON.parse(request.response);
-                console.log(dataRecipes);
+                //console.log(dataRecipes);
                 
-
+                //recipe json
                 dataRecipes.recipe.map(dataRecipe => {
                     //console.log(dataRecipe);
 
@@ -34,7 +34,7 @@ class DataManager {
                         let unit = null;
                         let preparation = null;
 
-                        if (name != undefined && name != '' && name != null) {
+                        if (ingredient.name != undefined && ingredient.name != '' && ingredient.name != null) {
                             name = ingredient.name;
                         };
 
@@ -60,7 +60,7 @@ class DataManager {
 
                     let step = dataRecipe.step.map(step => {
                         //console.log(step.description);
-
+                        return new Step(step.description);
                     });
 
                     if (dataRecipe.notes != undefined || dataRecipe.notes != '' || dataRecipe.notes != null) {

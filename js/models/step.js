@@ -1,7 +1,7 @@
 'use strict';
 
 class Step{
-    constructor(){
-        
+    constructor(pDescription){
+        this.description = pDescription;
     };
 };
