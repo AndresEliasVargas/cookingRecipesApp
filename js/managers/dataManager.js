@@ -82,6 +82,7 @@ class DataManager {
                 });
             };
 
+            this.appManager.completeDowload();
             console.log(this.recipes);
         };
 
