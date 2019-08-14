@@ -4,12 +4,8 @@ class DataManager {
     constructor(pAppManager) {
         this.appManager = pAppManager;
         this.recipes = [];
-        this.getData();
+        this.getRecipes();
     }
-
-    getData() {
-        const request = this.getRecipes();
-    };
 
     getRecipes() {
         let request = new XMLHttpRequest();
@@ -20,29 +16,54 @@ class DataManager {
 
     getRecipesCallback(e) {
         let request = e.target;
+
         let notes = null;
+        let name = null;
+        let amount = null;
+        let unit = null;
+        let preparation = null;
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 let dataRecipes = JSON.parse(request.response);
-                console.log(dataRecipes.recipe);
+                //console.log(dataRecipes.recipe);
 
                 dataRecipes.recipe.map(dataRecipe => {
-                    console.log(dataRecipe);
+                    // console.log(dataRecipe);
 
-                    let ingredients = new Ingredient(
-                        dataRecipe.ingredient.amount,
-                        dataRecipe.ingredient.unit,
-                        dataRecipe.ingredient.name
-                    );
+                    let ingredients = dataRecipe.ingredient.map(ingredient => {
+                        //console.log(ingredient);
 
-                    // let step = new Step();
+                        if (ingredient.name != undefined || ingredient.name != '' || ingredient.name != null) {
+                            name = ingredient.name;
+                        };
 
-                    // let tag = new Tag();
+                        if (ingredient.amount != undefined || ingredient.amount != '' || ingredient.amount != null) {
+                            amount = ingredient.amount;
+                        };
 
-                    if(dataRecipe.notes === undefined || dataRecipe.notes === '' || dataRecipe.notes === null){
-                        notes;
-                    } else {
+                        if (ingredient.unit != undefined || ingredient.unit != '' || ingredient.unit != null) {
+                            unit = ingredient.unit;
+                        };
+
+                        if (ingredient.preparation != undefined || ingredient.preparation != '' || ingredient.preparation != null) {
+                            preparation = ingredient.preparation;
+                        };
+
+                        new Ingredient(
+                            name,
+                            amount,
+                            unit,
+                            preparation
+                        );
+                    });
+
+                    let step = dataRecipe.step.map(step => {
+                        // console.log(step.description);
+
+                    });
+
+                    if (dataRecipe.notes != undefined || dataRecipe.notes != '' || dataRecipe.notes != null) {
                         notes = dataRecipe.notes;
                     };
 
@@ -53,14 +74,15 @@ class DataManager {
                         dataRecipe.forked,
                         dataRecipe.image,
                         notes,
-                        ingredients
+                        ingredients,
+                        step
                     );
 
                     this.recipes.push(newRecipe);
                 });
             };
+
             console.log(this.recipes);
-            
         };
 
     };

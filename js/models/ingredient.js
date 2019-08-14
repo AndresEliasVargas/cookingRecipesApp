@@ -1,8 +1,10 @@
 'use strict';
 
 class Ingredient{
-    constructor(){
-
+    constructor(pName, pAmount, pUnit, pPreparation){
+        this.name = pName;
+        this.amount = pAmount;
+        this.unit = pUnit;
+        this.preparation = pPreparation;
     };
-    
 };
