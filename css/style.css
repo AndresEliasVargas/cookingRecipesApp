@@ -1,0 +1,11 @@
+body{
+    height: 100vh;
+}
+
+#mainComponent{
+    height: 570px; /* Eliminar esta parte */
+}
+    #mainComponent #recipeSection,
+    #mainComponent #informationSection{
+        overflow-y: scroll;
+    }

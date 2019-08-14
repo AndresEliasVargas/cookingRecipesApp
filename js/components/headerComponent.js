@@ -13,9 +13,12 @@ class HeaderComponent{
         this.title.classList.add('text-center', 'text-white', 'my-4', 'col-12');
 
         this.header.appendChild(this.title);
+
+        this.main = new MainComponent(this);
     };
 
-    showHeader(pDiv, pUIManager){
+    showHeader(pBody, pDiv, pUIManager){
         pDiv.prepend(this.header);
+        this.main.showMain(pBody, pUIManager);
     };
 };

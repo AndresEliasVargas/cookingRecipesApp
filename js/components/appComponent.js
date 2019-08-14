@@ -14,6 +14,7 @@ class AppComponent{
     addPrincipalElement(pBody){
         pBody.prepend(this.div);
         this.headerComponent.showHeader(
+            pBody,
             this.div,
             this.uiManager
         );
