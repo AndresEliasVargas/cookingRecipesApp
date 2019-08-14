@@ -16,41 +16,41 @@ class DataManager {
 
     getRecipesCallback(e) {
         let request = e.target;
-
         let notes = null;
-        let name = null;
-        let amount = null;
-        let unit = null;
-        let preparation = null;
 
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 let dataRecipes = JSON.parse(request.response);
-                //console.log(dataRecipes.recipe);
+                console.log(dataRecipes);
+                
 
                 dataRecipes.recipe.map(dataRecipe => {
-                    // console.log(dataRecipe);
+                    //console.log(dataRecipe);
 
                     let ingredients = dataRecipe.ingredient.map(ingredient => {
-                        //console.log(ingredient);
+                        // console.log(ingredient.name);
+                        let name = null;
+                        let amount = null;
+                        let unit = null;
+                        let preparation = null;
 
-                        if (ingredient.name != undefined || ingredient.name != '' || ingredient.name != null) {
+                        if (name != undefined && name != '' && name != null) {
                             name = ingredient.name;
                         };
 
-                        if (ingredient.amount != undefined || ingredient.amount != '' || ingredient.amount != null) {
+                        if (ingredient.amount != undefined && ingredient.amount != '' && ingredient.amount != null) {
                             amount = ingredient.amount;
                         };
 
-                        if (ingredient.unit != undefined || ingredient.unit != '' || ingredient.unit != null) {
+                        if (ingredient.unit != undefined && ingredient.unit != '' && ingredient.unit != null) {
                             unit = ingredient.unit;
                         };
 
-                        if (ingredient.preparation != undefined || ingredient.preparation != '' || ingredient.preparation != null) {
+                        if (ingredient.preparation != undefined && ingredient.preparation != '' && ingredient.preparation != null) {
                             preparation = ingredient.preparation;
                         };
 
-                        new Ingredient(
+                        return new Ingredient(
                             name,
                             amount,
                             unit,
@@ -59,7 +59,7 @@ class DataManager {
                     });
 
                     let step = dataRecipe.step.map(step => {
-                        // console.log(step.description);
+                        //console.log(step.description);
 
                     });
 
