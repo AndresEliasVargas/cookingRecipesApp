@@ -14,6 +14,12 @@ class RecipesComponent {
 
     showRecipes(recipes) {
         this.recipesElement.innerHTML = '';
-        recipes.map(recipe => new RecipeComponent(recipe, this.recipesElement, this.uiManager));
+        recipes.map(recipe => new RecipeComponent(
+            recipe,
+            this.recipesElement,
+            this.uiManager
+            )
+        );
+        
     };
 };

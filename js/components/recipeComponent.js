@@ -4,7 +4,7 @@ class RecipeComponent{
     constructor(pModel, pParent, pUIManager){
         this.model = pModel;
         this.parent = pParent;
-        this.uiManager = pUIManager;
+        this.uiManager = pUIManager; //main componet
 
         this.div = document.createElement('div');
         this.div.id = 'recipeComponent';
@@ -22,6 +22,6 @@ class RecipeComponent{
 
     onRecipeClick(){
         window.scrollTo(0, 0); //eliminar si se corrige el error del css
-        
+        this.uiManager.showRecipeDetails(this.model);
     };
 };

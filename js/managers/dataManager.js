@@ -58,7 +58,7 @@ class DataManager {
                         );
                     });
 
-                    let step = dataRecipe.step.map(step => {
+                    let steps = dataRecipe.step.map(step => {
                         //console.log(step.description);
                         return new Step(step.description);
                     });
@@ -75,7 +75,7 @@ class DataManager {
                         dataRecipe.image,
                         notes,
                         ingredients,
-                        step
+                        steps
                     );
 
                     this.recipes.push(newRecipe);

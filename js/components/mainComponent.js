@@ -9,6 +9,7 @@ class MainComponent {
         this.main.classList.add('row');
 
         this.recipesComponent = new RecipesComponent(this.main, this);
+        this.informationsComponent = new InformationsComponent(this.main, this);
     };
 
     showMain(pBody, pAppManager) {
@@ -18,4 +19,8 @@ class MainComponent {
         let recipesData = pAppManager.appManager.dataManager.recipes;
         this.recipesComponent.showRecipes(recipesData, pAppManager);
     };
+
+    showRecipeDetails(recipes){
+        this.informationsComponent.showInformation(recipes);
+    }
 };
