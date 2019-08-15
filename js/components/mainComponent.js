@@ -1,33 +1,21 @@
 'use strict';
 
-class MainComponent{
-    constructor(pUIManager){
-        this.uiManager = pUIManager;
+class MainComponent {
+    constructor(pAppManager) {
+        this.appManager = pAppManager;
 
         this.main = document.createElement('main');
         this.main.id = 'mainComponent';
         this.main.classList.add('row');
 
-        this.left = document.createElement('section');
-        this.left.id = 'recipeSection';
-        this.left.classList.add('col-3', 'bg-info');
-
-        this.right = document.createElement('section');
-        this.right.id = 'informationSection';
-        this.right.classList.add('col-9', 'bg-light');
-
-        this.main.append(
-            this.left,
-            this.right
-        );
-
-        this.recipesComponent = new RecipesComponent(this);
+        this.recipesComponent = new RecipesComponent(this.main, this);
     };
 
-    showMain(pBody, pUIManager){
+    showMain(pBody, pAppManager) {
         let body = pBody.childNodes[0];
         body.appendChild(this.main);
 
-        this.recipesComponent.showRecipes(this.left, pUIManager);
+        let recipesData = pAppManager.appManager.dataManager.recipes;
+        this.recipesComponent.showRecipes(recipesData, pAppManager);
     };
 };

@@ -1,31 +1,19 @@
 'use strict';
 
 class RecipesComponent {
-    constructor(pUIManager) {
+    constructor(pMain, pUIManager) {
+        this.main = pMain;
         this.uiManager = pUIManager;
-
-        this.leftDiv = document.createElement('div');
-
-
-
-
-
-        this.recipe = document.createElement('div');
-
-
-
-        this.rightDiv = document.createElement('div');
-
-
-
         
+        this.recipesElement = document.createElement('section');
+        this.recipesElement.id = 'recipesComponent';
+        this.recipesElement.classList.add('col-3', 'bg-info');
+
+        this.main.prepend(this.recipesElement);
     };
 
-    showRecipes(pSection, pUIManager) {
-        pSection.append(
-            this.leftDiv,
-            this.recipe,
-            this.rightDiv
-        );
+    showRecipes(recipes) {
+        this.recipesElement.innerHTML = '';
+        recipes.map(recipe => new RecipeComponent(recipe, this.recipesElement, this.uiManager));
     };
 };

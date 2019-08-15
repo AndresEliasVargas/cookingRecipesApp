@@ -2,10 +2,14 @@ body{
     height: 100vh;
 }
 
-#mainComponent{
-    height: 570px; /* Eliminar esta parte */
+.pointer:hover{
+    cursor: pointer;
 }
-    #mainComponent #recipeSection,
-    #mainComponent #informationSection{
+
+#mainComponent{
+
+}
+    #mainComponent #recipesComponent,
+    #mainComponent #informationComponent{
         overflow-y: scroll;
     }
