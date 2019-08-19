@@ -10,7 +10,7 @@ class HeaderComponent{
         
         this.title = document.createElement('h1');
         this.title.innerHTML = 'Cooking Your World';
-        this.title.classList.add('text-center', 'my-4', 'col-12');
+        this.title.classList.add('text-center', 'my-4', 'col-12', 'headTitle');
 
         this.icon = document.createElement('i');
         this.icon.classList.add('fa', 'fa-book', 'display-4', 'ml-3');

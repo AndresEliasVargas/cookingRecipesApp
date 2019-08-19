@@ -32,10 +32,6 @@ ol {
     background: #FF8C00;
 }
 
-#headerComponent {
-    height: 20vh;
-}
-
 #mainComponent #recipesComponent,
 #mainComponent #informationsComponent {
     overflow-y: scroll;
@@ -43,11 +39,38 @@ ol {
 }
 
 #mainComponent #recipesComponent #recipeComponent:hover {
-    color: #FFC107 !important;
+    color: #dc3545 !important;
 }
 
-/* @media all and (min-width: 320px) {
-    .my-4{
-        margin-top: 10px !important;
+@media all and (min-width: 320px) {
+    #headerComponent{
+        height: 15vh;
     }
-} */
+
+    h1{
+        font-size: 1.8rem;
+    }
+
+    .headTitle{
+        margin: 25px 0 0 0 !important;
+    }
+
+    h1 > i::before{
+        display: none;
+    }
+    
+    #mainComponent #recipesComponent,
+    #mainComponent #informationsComponent {
+        height: 85vh;
+    }
+}
+
+@media all and (min-width: 768px){
+    h1 > i::before{
+        display: block;
+    }
+
+    #headerComponent {
+        height: 20vh;
+    }
+}

@@ -20,6 +20,7 @@ class RecipeComponent {
             'fa',
             'fa-compact-disc',
             'col-12',
+            'col-md-2',
             'text-center',
             'mt-4',
             'pt-1'
@@ -30,7 +31,8 @@ class RecipeComponent {
             'text-light',
             'my-4',
             'text-center',
-            'col-12'
+            'col-12',
+            'col-md-10'
         );
         this.title.innerHTML = this.model.name;
 

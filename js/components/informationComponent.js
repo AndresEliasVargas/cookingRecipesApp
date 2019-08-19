@@ -28,6 +28,7 @@ class InformationComponent {
         this.description.innerHTML = this.model.description;
 
         this.notes = document.createElement('p');
+        this.notes.classList.add('d-block');
         this.notes.innerHTML = '<b>Notes: </b>' + this.model.notes;
 
         this.ingredientsTitle = document.createElement('h6');
