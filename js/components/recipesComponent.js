@@ -7,7 +7,7 @@ class RecipesComponent {
         
         this.recipesElement = document.createElement('section');
         this.recipesElement.id = 'recipesComponent';
-        this.recipesElement.classList.add('col-3', 'bg-info');
+        this.recipesElement.classList.add('col-3', 'bg-orange');
 
         this.main.prepend(this.recipesElement);
     };

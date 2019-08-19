@@ -1,24 +1,47 @@
-body{
+body {
     height: 100vh;
     /* overflow: hidden; */
 }
 
-em{
+em {
     font-style: italic;
 }
 
-ol{
+ol {
     list-style: decimal;
 }
 
-.pointer:hover{
+.flowRoot {
+    display: flow-root;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.pointer:hover {
     cursor: pointer;
-}
-
-#mainComponent{
 
 }
-    #mainComponent #recipesComponent,
-    #mainComponent #informationsComponent{
-        overflow-y: scroll;
-    }
+
+.bg-orange {
+    background: #FF8C00;
+}
+
+#headerComponent {
+    height: 20vh;
+}
+
+#mainComponent #recipesComponent,
+#mainComponent #informationsComponent {
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+#mainComponent #recipesComponent #recipeComponent:hover {
+    color: #FFC107 !important;
+}

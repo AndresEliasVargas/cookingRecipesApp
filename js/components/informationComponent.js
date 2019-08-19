@@ -1,7 +1,7 @@
 'use strict';
 
-class InformationComponent{
-    constructor(pModel, pParent, pUIManager){
+class InformationComponent {
+    constructor(pModel, pParent, pUIManager) {
         this.model = pModel;
         this.parent = pParent;
         this.uiManager = pUIManager;
@@ -11,7 +11,13 @@ class InformationComponent{
         this.image = document.createElement('img');
         this.image.src = this.model.image;
         this.image.alt = 'Recipe ' + this.model.name + ' image';
-        this.image.classList.add('mx-auto', 'my-4', 'd-block', 'img-fluid');
+        this.image.classList.add(
+            'mx-auto',
+            'my-4',
+            'd-block',
+            'img-fluid',
+            'rounded'
+        );
         this.image.setAttribute('width', '500px');
 
         this.name = document.createElement('p');
@@ -35,11 +41,11 @@ class InformationComponent{
             let unit = ingredient.unit;
             let preparation = ingredient.preparation;
 
-            if(preparation === null){
+            if (preparation === null) {
                 preparation = '';
             }
 
-            if(unit === null){
+            if (unit === null) {
                 unit = '';
             }
 
@@ -50,7 +56,7 @@ class InformationComponent{
             if (name === null) {
                 name = '';
             }
-            
+
             this.li = document.createElement('li');
             this.li.innerHTML = '<i class="fas fa-utensils mr-2"></i>' + name + ' ' + amount + unit + ' ' + preparation;
             this.ingredientsContainer.append(this.li);
