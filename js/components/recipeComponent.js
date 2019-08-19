@@ -13,12 +13,14 @@ class RecipeComponent {
             'pointer',
             'text-white'
         );
+        this.div.onclick = this.onRecipeClick.bind(this);
 
         this.icon = document.createElement('i');
         this.icon.classList.add(
             'fa',
             'fa-compact-disc',
-            'col-2',
+            'col-12',
+            'text-center',
             'mt-4',
             'pt-1'
         );
@@ -27,10 +29,10 @@ class RecipeComponent {
         this.title.classList.add(
             'text-light',
             'my-4',
-            'col-10'
+            'text-center',
+            'col-12'
         );
         this.title.innerHTML = this.model.name;
-        this.title.onclick = this.onRecipeClick.bind(this);
 
         this.parent.appendChild(this.div);
         this.div.append(this.icon, this.title);

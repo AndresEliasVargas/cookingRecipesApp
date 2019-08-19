@@ -58,7 +58,7 @@ class InformationComponent {
             }
 
             this.li = document.createElement('li');
-            this.li.innerHTML = '<i class="fas fa-utensils mr-2"></i>' + name + ' ' + amount + unit + ' ' + preparation;
+            this.li.innerHTML = '<i class="fas fa-utensils mr-2"></i>' + amount + ' ' + unit + ' ' + name + ' ' + preparation;
             this.ingredientsContainer.append(this.li);
         });
 

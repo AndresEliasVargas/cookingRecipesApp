@@ -711,7 +711,53 @@
 			"id": "fathead-pineapple-pizza",
 			"description": "Low carb and delicious!",
 			"tag": [],
-			"ingredient": [],
+			"ingredient": [
+				{
+					"amount": "130",
+					"unit": "g",
+					"name": "Almond flour"
+				},
+				{
+					"amount": "40",
+					"unit": "g",
+					"name": "Nutritional yeast"
+				},
+				{
+					"amount": "330",
+					"unit": "g",
+					"name": "Mozarella grated"
+				},
+				{
+					"amount": "3",
+					"name": "Eggs beaten"
+				},
+				{
+					"amount": "4",
+					"unit": "tbsp",
+					"name": "Mascarpone"
+				},
+				{
+					"amount": "0.5",
+					"unit": "tsp",
+					"name": "Cumin freshly ground"
+				},
+				{
+					"amount": "0.5",
+					"unit": "tsp",
+					"name": "Garlic powder"
+				},
+				{
+					"amount": "200",
+					"unit": "g",
+					"name": "tomato",
+					"preparation": "concentrate/paste"
+				},
+				{
+					"amount": "5",
+					"unit": "cloves",
+					"name": "Garlic"
+				}
+			],
 			"step": [
 				{
 					"description": "Mix two thirds of the grated mozzarella, the almond flour, and the nutritional yeast in a microwaveable bowl. Add the mascarpone. Microwave on HIGH for 1 minute."
