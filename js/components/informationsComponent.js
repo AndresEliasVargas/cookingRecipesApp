@@ -6,7 +6,7 @@ class InformationsComponent{
         this.uiManager = pUIManager; //Main component
 
         this.container = document.createElement('section');
-        this.container.id = 'informationsContainer';
+        this.container.id = 'informationsComponent';
         this.container.classList.add('col-md-9', 'bg-light');
 
         this.main.append(this.container);
@@ -16,7 +16,7 @@ class InformationsComponent{
         this.container.innerHTML = '';
         new InformationComponent(
             recipe,
-            this.main,
+            this.container,
             this.uiManager
         );
     };
