@@ -7,7 +7,7 @@ class InformationsComponent{
 
         this.container = document.createElement('section');
         this.container.id = 'informationsComponent';
-        this.container.classList.add('col-md-9', 'bg-light');
+        this.container.classList.add('col-md-9', 'bg-light', 'p-4');
 
         this.main.append(this.container);
     };

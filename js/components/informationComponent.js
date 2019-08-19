@@ -15,7 +15,8 @@ class InformationComponent{
         this.image.setAttribute('width', '500px');
 
         this.name = document.createElement('p');
-        this.name.innerHTML = '<b>' + this.model.name + '</b>';
+        this.name.innerHTML = '<b><em>' + this.model.name + '</em></b>';
+        this.name.classList.add('text-center', 'd-block');
 
         this.description = document.createElement('p');
         this.description.innerHTML = this.model.description;
@@ -33,16 +34,40 @@ class InformationComponent{
             let amount = ingredient.amount;
             let unit = ingredient.unit;
             let preparation = ingredient.preparation;
-            let li = document.createElement('li');
-            let ingString = name + ', ' + amount + unit + ' ' + preparation;
 
-            //HACER LA VALIDACION DE LOS CAMPOS NULL PARA QUE NO APAREZCAN
+            if(preparation === null){
+                preparation = '';
+            }
+
+            if(unit === null){
+                unit = '';
+            }
+
+            if (amount === null) {
+                amount = '';
+            }
+
+            if (name === null) {
+                name = '';
+            }
             
-            this.ingredientsContainer.append(li);
-            li.append(ingString);
+            this.li = document.createElement('li');
+            this.li.innerHTML = '<i class="fas fa-utensils mr-2"></i>' + name + ' ' + amount + unit + ' ' + preparation;
+            this.ingredientsContainer.append(this.li);
         });
 
-        console.log(this.model.step);
+        this.stepsTitle = document.createElement('h6');
+        this.stepsTitle.innerHTML = 'Steps:';
+
+        this.stepsContainer = document.createElement('ol');
+        this.stepsContainer.classList.add('pl-4');
+
+        let steps = this.model.step.map(steps => {
+            this.stepsLi = document.createElement('li');
+            this.stepsLi.innerHTML = steps.description;
+
+            this.stepsContainer.appendChild(this.stepsLi);
+        });
 
         this.parent.appendChild(this.container);
         this.container.append(
@@ -51,11 +76,9 @@ class InformationComponent{
             this.description,
             this.ingredientsTitle,
             this.ingredientsContainer,
+            this.stepsTitle,
+            this.stepsContainer,
             this.notes
-        );
-
-        this.ingredientsContainer.append(
-            this.ingredients
         );
     }
 };

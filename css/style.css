@@ -3,8 +3,12 @@ body{
     /* overflow: hidden; */
 }
 
-ul li::before{
-    content: ;
+em{
+    font-style: italic;
+}
+
+ol{
+    list-style: decimal;
 }
 
 .pointer:hover{
