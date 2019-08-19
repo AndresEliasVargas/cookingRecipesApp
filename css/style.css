@@ -3,6 +3,10 @@ body{
     /* overflow: hidden; */
 }
 
+ul li::before{
+    content: ;
+}
+
 .pointer:hover{
     cursor: pointer;
 }
