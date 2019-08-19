@@ -41,7 +41,7 @@ class RecipeComponent {
     };
 
     onRecipeClick() {
-        window.scrollTo(0, 0); //eliminar si se corrige el error del css
+        window.scroll(0, 0);
         this.uiManager.showRecipeDetails(this.model);
     };
 };

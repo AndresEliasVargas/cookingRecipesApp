@@ -35,6 +35,7 @@ ol {
 #mainComponent #recipesComponent,
 #mainComponent #informationsComponent {
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 80vh;
 }
 
@@ -71,6 +72,26 @@ ol {
     }
 
     #headerComponent {
-        height: 20vh;
+        height: 15vh;   
+    }
+}
+
+@media all and (min-width: 1024px){
+    h1{
+        font-size: 2.5rem;
+    }
+
+    h6{
+        font-size: 1.5rem;
+    }
+
+    #recipesComponent i{
+        font-size: 2rem;
+        margin-top: 2rem !important;
+    }
+
+    #recipesComponent h6{
+        font-size: 1.5rem;
+        padding-top: 1rem;
     }
 }
